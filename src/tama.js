@@ -16,19 +16,21 @@ export class Tamagotchi {
 
   CheckOver(){
     if(this.hunger >= 100){
-     return this.hunger === 100;
-    // } else if(this.energy >= 100){
-    //   this.energy === 100;
-    // } else if(this.attention >= 100){
-    //   this.attention === 100;
-    // }
+     this.hunger === 100;
+    } else if(this.energy >= 100){
+    this.energy === 100;
+    } else if(this.attention >= 100){
+    this.attention === 100;
      } 
   }
 
-
-  // Passtime(){
-
-  // }
+  PassTime() {
+    setInterval(() => {
+      this.hunger--;
+      this.energy--;
+      this.attention--;
+    }, 1000);
+  }
 
   // Play(){
 

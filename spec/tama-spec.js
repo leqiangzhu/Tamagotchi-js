@@ -38,33 +38,54 @@ describe("Tamagotchi", function(){
 describe("Tamagotchi", function(){
   it('should check if the Tamagotchi hunger level is over 100', function(){
     let tama = new Tamagotchi("Tama");
-    
     this.hunger=101;
-
     tama.CheckOver();
     expect(tama.hunger).toEqual(100);
 
   });
 });
 
-// describe("Tamagotchi", function(){
-//   it('should check if the Tamagotchi energy level is over 100', function(){
+describe("Tamagotchi", function(){
+  it('should check if the Tamagotchi energy level is over 100', function(){
+    let tama = new Tamagotchi("Tama");
+    this.energy=101;
+    tama.CheckOver();
+   expect(tama.energy).toEqual(100);
 
-//   });
-// });
-
-// describe("Tamagotchi", function(){
-//   it('should check if the Tamagotchi attention level is over 100', function(){
-
-//   });
-// });
+  });
+});
 
 
-// describe("Tamagotchi", function(){
-//   it('should check if the Passtime() method passes time and decreases properly', function(){
+describe("Tamagotchi", function(){
+  it('should check if the Tamagotchi attention level is over 100', function(){
+    let tama = new Tamagotchi("Tama");
+    this.attention=101;
+    tama.CheckOver();
+    expect(tama.attention).toEqual(100);
+  });
+});
 
-//   });
-// });
+
+describe("Tamagotchi", function(){
+ 
+  let tama = new Tamagotchi("Tama");
+ 
+  beforeEach(function() {
+    jasmine.clock().install();
+    tama.PassTime();
+  });
+
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+
+  it('should check if the Passtime() method passes time and decreases properly', function(){ 
+    jasmine.clock().tick(3001);
+    expect(tama.hunger).toEqual(97);
+    expect(tama.energy).toEqual(97);
+    expect(tama.attention).toEqual(97);
+  });
+});
 
 
 // describe("Tamagotchi", function(){
