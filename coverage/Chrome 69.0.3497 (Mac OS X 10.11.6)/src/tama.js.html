@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/tama.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> tama.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">!function(n){var e={};function t(r){<span class="missing-if-branch" title="if path not taken" >I</span>if(e[r])<span class="cstat-no" title="statement not covered" >return e[r].exports;v</span>ar a=e[r]={i:r,l:!1,exports:{}};return n[r].call(a.exports,a,a.exports,t),a.l=!0,a.exports}t.m=n,t.c=e,t.d=<span class="fstat-no" title="function not covered" >function(n,e,r){<span class="cstat-no" title="statement not covered" ></span>t.o(n,e)||Object.defineProperty(n,e,{configurable:!1,enumerable:!0,get:r})}</span>,t.r=<span class="fstat-no" title="function not covered" >function(n){<span class="cstat-no" title="statement not covered" ></span>Object.defineProperty(n,"__esModule",{value:!0})}</span>,t.n=<span class="fstat-no" title="function not covered" >function(n){<span class="cstat-no" title="statement not covered" ></span>var e=n&amp;&amp;n.__esModule?<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return n.default}</span>:<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return n}</span>;<span class="cstat-no" title="statement not covered" >r</span>eturn t.d(e,"a",e),e}</span>,t.o=<span class="fstat-no" title="function not covered" >function(n,e){<span class="cstat-no" title="statement not covered" ></span>return Object.prototype.hasOwnProperty.call(n,e)}</span>,t.p="/var/folders/zz/zyxvpxvq6csfxvn_n00000s4000069/T/_karma_webpack_/",t(t.s=12)}({12:function(module,exports,__webpack_require__){"use strict";eval('\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nvar Tamagotchi = exports.Tamagotchi = function () {\n  function Tamagotchi(name) {\n    var hunger = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 100;\n    var energy = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : 100;\n    var attention = arguments.length &gt; 3 &amp;&amp; arguments[3] !== undefined ? arguments[3] : 100;\n\n    _classCallCheck(this, Tamagotchi);\n\n    this.name = name;\n    this.hunger = hunger;\n    this.energy = energy;\n    this.attention = attention;\n  }\n\n  _createClass(Tamagotchi, [{\n    key: "CheckDead",\n    value: function CheckDead() {\n      if (this.hunger &lt;= 0 || this.energy &lt;= 0 || this.attention &lt;= 0) {\n        return true;\n      } else {\n        return false;\n      }\n    }\n  }, {\n    key: "CheckOver",\n    value: function CheckOver() {\n      if (this.hunger &gt;= 100) {\n        return this.hunger === 100;\n        // } else if(this.energy &gt;= 100){\n        //   this.energy === 100;\n        // } else if(this.attention &gt;= 100){\n        //   this.attention === 100;\n        // }\n      }\n    }\n\n    // Passtime(){\n\n    // }\n\n    // Play(){\n\n    // }\n\n    // Feed(){\n\n    // }\n\n  }]);\n\n  return Tamagotchi;\n}();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvdGFtYS5qcz8yMjMzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7SUFDQztzQkFBYTtBQUNaLFFBRGtCLDZFQUFTO1FBQUssNkVBQVM7UUFBSyxnRkFBWTs7OztTQUNyRCxPQUNMO1NBQUssU0FDTDtTQUFLLFNBQ0w7U0FBSyxZQUNKO0FBRUQ7Ozs7Z0NBQ0U7VUFBRyxLQUFLLFVBQVUsS0FBSyxLQUFLLFVBQVUsS0FBSyxLQUFLLGFBQWEsR0FDM0Q7ZUFDRDtBQUZELGFBR0U7ZUFDRDtBQUNGO0FBRUQ7OztnQ0FDRTtVQUFHLEtBQUssVUFBVSxLQUNqQjtlQUFPLEtBQUssV0FDYjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0U7QUFDSDtBQUdEOztBQUVBOztBQUVBOztBQUVBOztBQUVBOztBQUVBOztBQXRDc0IiLCJmaWxlIjoiMTIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgVGFtYWdvdGNoaSB7XG4gY29uc3RydWN0b3IgKG5hbWUsIGh1bmdlciA9IDEwMCwgZW5lcmd5ID0gMTAwLCBhdHRlbnRpb24gPSAxMDApe1xuICB0aGlzLm5hbWUgPSBuYW1lO1xuICB0aGlzLmh1bmdlciA9IGh1bmdlcjtcbiAgdGhpcy5lbmVyZ3kgPSBlbmVyZ3k7XG4gIHRoaXMuYXR0ZW50aW9uID0gYXR0ZW50aW9uO1xuICB9XG5cbiAgQ2hlY2tEZWFkKCl7XG4gICAgaWYodGhpcy5odW5nZXIgPD0gMCB8fCB0aGlzLmVuZXJneSA8PSAwIHx8IHRoaXMuYXR0ZW50aW9uIDw9IDApe1xuICAgICAgcmV0dXJuIHRydWU7XG4gICAgfWVsc2V7XG4gICAgICByZXR1cm4gZmFsc2U7XG4gICAgfVxuICB9XG5cbiAgQ2hlY2tPdmVyKCl7XG4gICAgaWYodGhpcy5odW5nZXIgPj0gMTAwKXtcbiAgICAgcmV0dXJuIHRoaXMuaHVuZ2VyID09PSAxMDA7XG4gICAgLy8gfSBlbHNlIGlmKHRoaXMuZW5lcmd5ID49IDEwMCl7XG4gICAgLy8gICB0aGlzLmVuZXJneSA9PT0gMTAwO1xuICAgIC8vIH0gZWxzZSBpZih0aGlzLmF0dGVudGlvbiA+PSAxMDApe1xuICAgIC8vICAgdGhpcy5hdHRlbnRpb24gPT09IDEwMDtcbiAgICAvLyB9XG4gICAgIH0gXG4gIH1cblxuXG4gIC8vIFBhc3N0aW1lKCl7XG5cbiAgLy8gfVxuXG4gIC8vIFBsYXkoKXtcblxuICAvLyB9XG5cbiAgLy8gRmVlZCgpe1xuXG4gIC8vIH1cblxufVxuXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///12\n')}});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 15 2018 11:30:13 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
