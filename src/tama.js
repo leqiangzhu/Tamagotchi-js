@@ -29,16 +29,20 @@ export class Tamagotchi {
       this.hunger--;
       this.energy--;
       this.attention--;
-    }, 1000);
+    }, 3000);
   }
 
-  // Play(){
+  Play(){
+    this.hunger += 10, this.energy -= 10, this.attention -= 10;
+  }
 
-  // }
+  Feed(){
 
-  // Feed(){
+  }
 
-  // }
+  Sleep(){
+
+  }
 
 }
 
