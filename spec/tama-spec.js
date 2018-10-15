@@ -128,5 +128,19 @@ describe("Tamagotchi", function(){
   });
 });
 
+describe("Tamagotchi", function(){
+  it('should check if the CheckStatus() method is working', function(){
+    let tama = new Tamagotchi("Tama");
+    tama.hunger = 90;
+    tama.energy = 90;
+    tama.attention = 90; 
+    tama.CheckStatus();
+    expect(tama.hunger).toEqual(90);
+    expect(tama.energy).toEqual(90);
+    expect(tama.attention).toEqual(90);
+
+  });
+});
+
 
 

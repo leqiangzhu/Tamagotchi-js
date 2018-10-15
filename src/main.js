@@ -1,32 +1,48 @@
+import{Tamagotchi}from './tama.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-$(document).ready(function() {
-  $('#submittedNumber').click(function() {
-    const inputtedNumber = parseInt($('#number').val());
-    $('#number').val("");
+$(document).ready(function(){
 
-    function checkNumber(number) {
-      if (isNaN(number) || number < 0) {
-        return new Error("Not a valid number!");
-      } else {
-        return true;
-      }
-    }
+  $("#createTama").submit(function(event){
+    event.preventDefault();
+    let tamagotchi = $("#name").val();
+    let userTama= new Tamagotchi(tamagotchi);
+    console.log(userTama);
+    userTama.PassTime();
+    $("#tamaName").text(userTama.name); 
+    
+    setInterval(function(){
+      $("#tamaHunger").text(userTama.hunger); 
+      $("#tamaSleep").text(userTama.energy); 
+      $("#tamaPlay").text(userTama.attention); 
+      userTama.CheckOver();
+      userTama.CheckDead();
+     
+  
+    },100);
+     
 
-    try {
-      const isNumberValid = checkNumber(inputtedNumber);
-      if (isNumberValid instanceof Error) {
-        // console.error(isNumberValid.message);
-        throw RangeError("Not a valid number!");
-      } else {
-        console.log("Try was successful, so no need to catch!");
-        $('#displayNumber').text("This number is valid. You may continue.")
-      }
-    } catch(error) {
-      console.error(`Red alert! We have an error: ${error.message}`)
-    }
-  });
+    $("#play").click(function(){
+      userTama.Play();
+      
+    });
+
+    $("#feed").click(function(){
+      userTama.Feed();
+      //userTama.CheckOver();
+    });
+
+    $("#sleep").click(function(){
+      userTama.Sleep();
+     // userTama.CheckOver();
+    });
+   
+      $("#hiddenForm").show();
+      $("#tamaForm").hide();
+
+});
+
 });

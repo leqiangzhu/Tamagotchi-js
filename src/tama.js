@@ -1,26 +1,32 @@
-export class Tamagotchi {
+export class Tamagotchi  {
  constructor (name, hunger = 100, energy = 100, attention = 100){
   this.name = name;
   this.hunger = hunger;
   this.energy = energy;
   this.attention = attention;
+  this.game = true;
+
+  }
+  CheckStatus(){
+    this.hunger;
+    this.energy;
+    this.attention;
+
   }
 
   CheckDead(){
     if(this.hunger <= 0 || this.energy <= 0 || this.attention <= 0){
-      return true;
-    }else{
-      return false;
-    }
+        this.game = false;
+    } return this.game;
   }
 
   CheckOver(){
     if(this.hunger >= 100){
-     this.hunger === 100;
-    } else if(this.energy >= 100){
-    this.energy === 100;
-    } else if(this.attention >= 100){
-    this.attention === 100;
+     this.hunger = 100;
+    } if(this.energy >= 100){
+    this.energy = 100;
+    } if(this.attention >= 100){
+    this.attention = 100;
      } 
   }
 
@@ -29,6 +35,7 @@ export class Tamagotchi {
       this.hunger--;
       this.energy--;
       this.attention--;
+      
     }, 3000);
   }
 
@@ -42,7 +49,7 @@ export class Tamagotchi {
   }
 
   Sleep(){
-    this.hunger -= 10, this.energy -= 10;
+    this.hunger -= 10, this.energy += 10;
   }
 
 }
