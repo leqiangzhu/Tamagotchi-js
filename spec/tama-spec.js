@@ -100,17 +100,33 @@ describe("Tamagotchi", function(){
   });
 });
 
-// describe("Tamagotchi", function(){
-//   it('should check if the Feed() method adds proper values', function(){
+describe("Tamagotchi", function(){
+  it('should check if the Feed() method adds proper values', function(){
+    let tama = new Tamagotchi("Tama");
+    tama.hunger = 90;
+    tama.energy = 90;
+    tama.attention = 90; 
+    tama.Feed();
+    expect(tama.hunger).toEqual(100);
+    expect(tama.energy).toEqual(100);
+    expect(tama.attention).toEqual(95);
 
-//   });
-// });
+  });
+});
 
-// describe("Tamagotchi", function(){
-//   it('should check if the Sleep() method adds proper values', function(){
+ describe("Tamagotchi", function(){
+  it('should check if the Sleep() method adds proper values', function(){
+    let tama = new Tamagotchi("Tama");
+    tama.hunger = 90;
+    tama.energy = 90;
+    tama.attention = 90; 
+    tama.Sleep();
+    expect(tama.hunger).toEqual(80);
+    expect(tama.energy).toEqual(80);
+    expect(tama.attention).toEqual(90);
 
-//   });
-// });
+  });
+});
 
 
 
