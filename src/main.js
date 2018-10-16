@@ -12,6 +12,10 @@ $(document).ready(function(){
     let userTama= new Tamagotchi(tamagotchi);
     userTama.PassTime();
     $("#tamaName").text(userTama.name); 
+    $("#reset").hide();
+    $("#result").hide();
+    $("#hiddenForm").show();
+    $("#tamaForm").hide();
     
   let run= setInterval(function(){
       
@@ -22,9 +26,10 @@ $(document).ready(function(){
       userTama.CheckStatus();
       userTama.CheckUnder();
 
-      if(userTama.CheckDead()){
-        alert("GAME OVER");
+      if(userTama.CheckDead()){        
         clearInterval(run);
+        $("#reset").show();
+        $("#result").show();
       }
       console.log(userTama.hunger);
     },100);
@@ -40,9 +45,10 @@ $(document).ready(function(){
     $("#sleep").click(function(){
       userTama.Sleep();
     });
-   
-      $("#hiddenForm").show();
-      $("#tamaForm").hide();
+
+    $("#reset").click(function(){
+      userTama.Reset();
+    })
 
   });
 });

@@ -5,6 +5,7 @@ export class Tamagotchi  {
   this.energy = energy;
   this.attention = attention;
   }
+  
   CheckStatus(){
     this.hunger;
     this.energy;
@@ -36,12 +37,15 @@ export class Tamagotchi  {
   CheckUnder(){
     if(this.hunger <= 0){    
       this.hunger = 0;
+      $("#result").text("You starved to death!")
      } 
      if(this.energy <= 0){
-     this.energy = 0;
+      this.energy = 0;
+      $("#result").text("You died from too much activity!")
      } 
      if(this.attention <= 0){
-     this.attention = 0;
+      this.attention = 0;
+      $("#result").append("You died from insomnia!")
      } 
   }
 
@@ -50,7 +54,6 @@ export class Tamagotchi  {
       this.hunger--;
       this.energy--;
       this.attention--;
-      
     }, 3000);
   }
 
@@ -69,5 +72,9 @@ export class Tamagotchi  {
     this.CheckUnder();
   }
 
+  Reset(){
+    $("#hiddenForm").hide();
+    $("#tamaForm").show();
+  }
 }
 
