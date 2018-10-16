@@ -15,7 +15,7 @@ describe("Tamagotchi", function(){
     let tama = new Tamagotchi("Tama");
     tama.hunger = 0;
     let check = tama.CheckDead();
-    expect(check).toEqual(true);
+    expect(check).toEqual(false);
   });
 });
 
@@ -23,7 +23,7 @@ describe("Tamagotchi", function(){
   it('should check if the Tamagotchi is dead depending on energy', function(){
     let tama = new Tamagotchi("Tama");
     tama.energy = 0;
-    expect(tama.CheckDead()).toEqual(true);
+    expect(tama.CheckDead()).toEqual(false);
   });
 });
 
@@ -31,7 +31,7 @@ describe("Tamagotchi", function(){
   it('should check if the Tamagotchi is dead depending on attention', function(){
     let tama = new Tamagotchi("Tama");
     tama.attention = 0;
-    expect(tama.CheckDead()).toEqual(true);
+    expect(tama.CheckDead()).toEqual(false);
   });
 });
 
@@ -122,7 +122,7 @@ describe("Tamagotchi", function(){
     tama.attention = 90; 
     tama.Sleep();
     expect(tama.hunger).toEqual(80);
-    expect(tama.energy).toEqual(80);
+    expect(tama.energy).toEqual(100);
     expect(tama.attention).toEqual(90);
 
   });
@@ -138,6 +138,16 @@ describe("Tamagotchi", function(){
     expect(tama.hunger).toEqual(90);
     expect(tama.energy).toEqual(90);
     expect(tama.attention).toEqual(90);
+
+  });
+});
+
+describe("Tamagotchi", function(){
+  it('should check if the Tamagotchi energy level is less than 0', function(){
+    let tama = new Tamagotchi("Tama");
+    tama.hunger = -1;
+    tama.CheckUnder();
+   expect(tama.hunger).toEqual(0);
 
   });
 });

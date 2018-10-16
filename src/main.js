@@ -10,34 +10,48 @@ $(document).ready(function(){
     event.preventDefault();
     let tamagotchi = $("#name").val();
     let userTama= new Tamagotchi(tamagotchi);
-    console.log(userTama);
     userTama.PassTime();
     $("#tamaName").text(userTama.name); 
     
-    setInterval(function(){
+  let run= setInterval(function(){
+      
       $("#tamaHunger").text(userTama.hunger); 
       $("#tamaSleep").text(userTama.energy); 
       $("#tamaPlay").text(userTama.attention); 
       userTama.CheckOver();
-      userTama.CheckDead();
-     
-  
-    },100);
-     
+      userTama.CheckStatus();
+      userTama.CheckUnder();
+     // userTama.CheckDead();
 
+      if(userTama.CheckDead()){
+       
+        // userTama.hunger = 0;
+        // userTama.energy = 0;
+        // userTama.attention = 0;
+       alert("GAME OVER");
+        clearInterval(run);
+      
+      }
+
+      // if(this.hunger <= 0 || this.energy <= 0 || this.attention <= 0){
+  
+      //   clearInterval(run);
+      // }
+      console.log(userTama.hunger);
+    },100);
+    
+   
+   
     $("#play").click(function(){
       userTama.Play();
-      
     });
 
     $("#feed").click(function(){
       userTama.Feed();
-      //userTama.CheckOver();
     });
 
     $("#sleep").click(function(){
       userTama.Sleep();
-     // userTama.CheckOver();
     });
    
       $("#hiddenForm").show();
