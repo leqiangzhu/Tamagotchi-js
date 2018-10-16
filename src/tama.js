@@ -63,7 +63,7 @@ export class Tamagotchi  {
   }
 
   Feed(){
-    this.hunger += 10, this.energy += 10, this.attention += 5;
+    this.hunger += 10, this.energy -= 10, this.attention += 5;
     this.CheckUnder();
   }
 
