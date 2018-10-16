@@ -1,5 +1,5 @@
 export class Tamagotchi  {
- constructor (name, hunger = 10, energy = 100, attention = 100){
+ constructor (name, hunger = 100, energy = 100, attention = 100){
   this.name = name;
   this.hunger = hunger;
   this.energy = energy;
@@ -12,13 +12,13 @@ export class Tamagotchi  {
   }
 
   CheckDead(){
-    let falg=true;
+    let flag = true;
     if(this.hunger <= 0 || this.energy <= 0 || this.attention <= 0){
-      falg= true;
+      flag = true;
     }else{
-      falg= false;
+      flag = false;
     }
-    return falg;
+    return flag;
   }
 
   CheckOver(){
@@ -32,26 +32,18 @@ export class Tamagotchi  {
     this.attention = 100;
     } 
   }
-//6,7,8
  
   CheckUnder(){
-    if(this.hunger <= 0){
-      
-    
-    //  alert("Game Over!!!!check under");
+    if(this.hunger <= 0){    
       this.hunger = 0;
-
      } 
      if(this.energy <= 0){
      this.energy = 0;
-   // alert("Game Over!!!!check under");
      } 
      if(this.attention <= 0){
      this.attention = 0;
-    // alert("Game Over!!!!check under");
      } 
   }
-
 
   PassTime() {
     setInterval(() => {
@@ -64,15 +56,17 @@ export class Tamagotchi  {
 
   Play(){
     this.hunger += 10, this.energy -= 10, this.attention -= 10;
+    this.CheckUnder();
   }
 
   Feed(){
     this.hunger += 10, this.energy += 10, this.attention += 5;
-
+    this.CheckUnder();
   }
 
   Sleep(){
     this.hunger -= 10, this.energy += 10;
+    this.CheckUnder();
   }
 
 }

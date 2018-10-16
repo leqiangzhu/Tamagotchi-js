@@ -1,4 +1,4 @@
-import{Tamagotchi}from './tama.js';
+import{ Tamagotchi } from './tama.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,26 +21,13 @@ $(document).ready(function(){
       userTama.CheckOver();
       userTama.CheckStatus();
       userTama.CheckUnder();
-     // userTama.CheckDead();
 
       if(userTama.CheckDead()){
-       
-        // userTama.hunger = 0;
-        // userTama.energy = 0;
-        // userTama.attention = 0;
-       alert("GAME OVER");
+        alert("GAME OVER");
         clearInterval(run);
-      
       }
-
-      // if(this.hunger <= 0 || this.energy <= 0 || this.attention <= 0){
-  
-      //   clearInterval(run);
-      // }
       console.log(userTama.hunger);
     },100);
-    
-   
    
     $("#play").click(function(){
       userTama.Play();
@@ -57,6 +44,5 @@ $(document).ready(function(){
       $("#hiddenForm").show();
       $("#tamaForm").hide();
 
-});
-
+  });
 });
